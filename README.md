@@ -1,3 +1,3 @@
 # ResearchCommunityPlatfromDjango
 Research Geek with python stack.
-![research geek](ResearchgeekDjango/Django web app.png)
+![research geek](ResearchgeekDjango/Django-web-app.png)
