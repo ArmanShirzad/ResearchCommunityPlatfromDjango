@@ -1,0 +1,86 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Research Geek</title>
+    <link rel="stylesheet" href="{% static 'styles.css' %}">
+</head>
+<body>
+
+    <nav class="navbar">
+        <div class="navbar-container">
+            <a href="/" class="navbar-brand">Research Geek</a>
+            <ul class="navbar-menu">
+                <li class="navbar-item"><a href="#" class="navbar-link">Communities</a></li>
+                <li class="navbar-item"><a href="#" class="navbar-link">My Dashboard</a></li>
+                <li class="navbar-item"><a href="#" class="navbar-link">Log in</a></li>
+                <li class="navbar-item"><a href="#" class="navbar-link navbar-link-signup">Sign up</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <main>
+        <section class="upload-box">
+            <h2>Upload or Link Your Research</h2>
+            <form id="upload-form" method="post" action="{% url 'assign_doi' %}" enctype="multipart/form-data">
+                {% csrf_token %}
+                <div class="form-group">
+                    
+                    <input type="file" name="upload_file" id="upload_file" class="form-control">
+                </div>
+                <div class="form-group">
+                    <label for="github_repo">GitHub Repository</label>
+                    <input type="text" name="github_repo" id="github_repo" class="form-control" placeholder="Enter GitHub Repository URL">
+                </div>
+                <div class="form-group action">
+                    <button type="submit" class="btn assign-doi">Assign DOI</button>
+                </div>
+            </form>
+        </section>
+
+        <!-- Recent Uploads Section -->
+        <section class="upload-box">
+            <h2>Recent uploads</h2>
+            <div class="publication">
+                <h3 class="title">A Bibliometric Analysis of Quantum Machine Learning Research</h3>
+                <p class="authors">Authors: A. Ashktorab, A. Shirzad, Ali Mohammad Saghiri</p>
+                <p class="year">Year: 2022</p>
+                <a href="#" class="doi">DOI: 10.1000/182</a>
+                <button class="cite-btn" onclick="citePublication('A Bibliometric Analysis of Quantum Machine Learning Research', 'A. Ashktorab, A. Shirzad, Ali Mohammad Saghiri', '2022', '10.1000/182')">CITE</button>
+            </div>
+            <div class="publication">
+                <h3 class="title">Novel Speaker Recognition Method on VoxCeleb Dataset</h3>
+                <p class="authors">Authors: A. Shirzad, A. Robolpour, R. Darshti</p>
+                <p class="year">Year: 2023</p>
+                <a href="#" class="doi">DOI: 10.1000</a>
+                <button class="cite-btn">CITE</button>
+            </div>
+            <div class="publication">
+                <h3 class="title">Optimizing Cloud Datacenter Profit Using a Q-learning-Based Method</h3>
+                <p class="authors">Authors: M. Mohammadi, R. Darshti, A. Robolpour, A. Shirzad</p>
+                <p class="year">Year: 2023</p>
+                <a href="#" class="doi">DOI: 10.1000</a>
+                <button class="cite-btn">CITE</button>
+            </div>
+            <!-- Add more publications as needed -->
+        </section>
+
+        <!-- Dashboard CTA Section -->
+        <section class="dashboard-cta">
+            <!-- Content for the dashboard call-to-action -->
+        </section>
+    </main>
+
+    <footer>
+        <p>Created by Arman Shirzad</p>
+        <p>&copy; 2024 Research Geek. All rights reserved.</p>
+    </footer>
+
+    <!-- JavaScript for toggle menu -->
+    <script src="{% static 'js/citePublication.js' %}"></script>
+    <script src="{% static 'js/uploadFormHandler.js' %}"></script>
+
+</body>
+</html>

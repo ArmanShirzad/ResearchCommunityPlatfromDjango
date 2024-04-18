@@ -1,0 +1,217 @@
+/* Base reset styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body, html {
+    font-family: Arial, sans-serif;
+}
+
+/* Navigation bar */
+.navbar {
+    background-color: #003366; /* Dark blue */
+    color: #fff;
+    height: 60px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 20px;
+}
+
+/* Navigation container */
+.navbar-container {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+/* Navbar brand/logo */
+.navbar-brand {
+    font-size: 1.5em; /* Adjust the size as needed */
+    color: white;
+    text-decoration: none;
+}
+
+/* Hamburger menu styles */
+.navbar-toggle {
+    cursor: pointer;
+    background: none;
+    border: none;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    height: 25px; /* Adjust height as necessary */
+    padding: 0;
+}
+
+.bar {
+    display: block;
+    width: 25px;
+    height: 3px;
+    background-color: #fff;
+}
+
+/* Navbar menu list */
+.navbar-menu {
+    display: flex;
+    list-style: none;
+}
+
+/* Navbar menu item */
+.navbar-item {
+    padding: 0 10px;
+}
+
+/* Navbar link */
+.navbar-link, .navbar-link-signup {
+    color: #fff;
+    text-decoration: none;
+    padding: 10px 15px;
+    display: block;
+}
+
+/* Navbar link hover/focus styles */
+.navbar-link:hover, .navbar-link:focus, .navbar-link-signup:hover, .navbar-link-signup:focus {
+    color: #ffd700;
+    text-decoration: none;
+}
+
+/* Sign up link specific styles */
+.navbar-link-signup {
+    background-color: #ffd700;
+    color: #003366;
+    padding: 10px 15px;
+    margin-left: 10px; /* Add space between login and signup */
+    border-radius: 4px;
+}
+
+/* Responsive styles */
+@media (max-width: 768px) {
+    .navbar-menu {
+        display: none;
+        position: absolute;
+        top: 60px;
+        right: 0;
+        width: 100%;
+        flex-direction: column;
+        background-color: #003366;
+    }
+
+    .navbar-menu.active {
+        display: flex;
+    }
+
+    .navbar-item {
+        text-align: center;
+        padding: 10px 0;
+    }
+
+    .navbar-link-signup {
+        margin-left: 0; /* Align with other links */
+    }
+}
+
+/* Publication styles */
+.publication {
+    background: #ffffff;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    margin-bottom: 20px;
+    padding: 15px;
+    border-left: 5px solid #3498db; /* Blue accent border */
+}
+
+.publication h3.title {
+    color: #2c3e50; /* Dark shade for titles */
+    margin-bottom: 5px;
+}
+
+.publication p {
+    margin-bottom: 5px;
+    color: #7f8c8d; /* Grey color for metadata */
+}
+
+.doi a {
+    text-decoration: none;
+    color: #2980b9; /* DOI link color */
+}
+
+/* Cite button styles */
+.cite-btn {
+    background-color: #3498db; /* Blue button */
+    color: white;
+    border: none;
+    padding: 5px 10px;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-top: 5px;
+}
+
+.cite-btn:hover {
+    background-color: #2980b9; /* Darker blue on hover */
+}
+
+/* Form group styles */
+.form-group {
+    margin-bottom: 1rem;
+}
+
+/* Input and button styling */
+.form-control, .btn {
+    display: block;
+    width: 100%;
+    padding: .375rem .75rem;
+    font-size: 1rem;
+    line-height: 1.5;
+    color: #495057;
+    background-color: #fff;
+    border: 1px solid #ced4da;
+    border-radius: .25rem;
+    transition: border-color .15s ease-in-out, box-shadow .15s ease-in-out;
+}
+
+.form-control:focus {
+    border-color: #80bdff;
+    box-shadow: 0 0 0 0.2rem rgba(0,123,255,.25);
+}
+
+/* Footer styles */
+footer {
+    background-color: #2c3e50;
+    color: white;
+    text-align: center;
+    padding: 10px;
+    position: relative;
+    bottom: 0;
+    width: 100%;
+    margin-top: 40px;
+}
+
+
+/* Upload box styles */
+.upload-box {
+    background: #f9f9f9;
+    padding: 20px;
+    margin: 20px auto;
+    width: 80%;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+    border-radius: 5px;
+}
+
+/* Assign DOI button additional styles */
+.assign-doi-btn {
+    background-color: #3498db;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    display: inline-block; /* Or block if you want it to take the full width */
+    margin-top: 10px;
+}
+
+.assign-doi-btn:hover {
+    background-color: #2980b9;
+}
